@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         val imgbtnmezclas = findViewById<ImageButton>(R.id.imgbtnmezclas)
         listaMezclas = db.getMezclas()
         System.out.println("NUMERO DE MEZCLAS: "+ listaMezclas.size)
+        imgbtnmezclas.setOnClickListener { view ->
+            val intent :Intent = Intent(this, MezclasActivity::class.java).apply {
+                putExtra("EXTRA_SABOR", "Mezclas")
+            }
+            this.startActivity(intent)
+        }
         setUpRecyclerView()
     }
 

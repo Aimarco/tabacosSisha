@@ -12,14 +12,14 @@ class MezclasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.listasabores)
+        setContentView(R.layout.mezclasrecyclerview)
         // Get the Intent that started this activity and extract the string
         val  intent: Intent = getIntent();
-        val sabor : MarcaTabaco = intent.getSerializableExtra("EXTRA_SABOR") as MarcaTabaco
+        //val sabor : MarcaTabaco = intent.getSerializableExtra("EXTRA_SABOR") as MarcaTabaco
 
         // Capture the layout's TextView and set the string as its text
-        val textView = findViewById<TextView>(R.id.txtSabor)
-        textView.text = sabor?.nombre
+        //val textView = findViewById<TextView>(R.id.txtSabor)
+        //textView.text = sabor?.nombre
 
         val db = DataDbHelper(this)
         //db.getMezclas()
