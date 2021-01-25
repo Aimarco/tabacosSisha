@@ -32,7 +32,7 @@ class DataDbHelper (context : Context) :SQLiteOpenHelper(context,DATABASE_NAME,n
                 Tables.Mezclas.COLUMN_MARCA2+ " TEXT,"+
                 Tables.Mezclas.COLUMN_SABOR1+ " TEXT,"+
                 Tables.Mezclas.COLUMN_SABOR2+ " TEXT,"+
-                Tables.Mezclas.COLUMN_PORCENTAJE1+ " INTEGER"+
+                Tables.Mezclas.COLUMN_PORCENTAJE1+ " INTEGER,"+
                 Tables.Mezclas.COLUMN_PORCENTAJE2+ " INTEGER)");
     db?.execSQL("CREATE TABLE "+Tables.Sabores.TABLE_NAME+" ("+Tables.Sabores._ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"+
             Tables.Sabores.COLUMN_NOMBRE+ " TEXT NOT NULL,"+

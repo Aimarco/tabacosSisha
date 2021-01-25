@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
         val db = DataDbHelper(this)
         listaTabacos = db.getTabacos()
+        System.out.println("NUMERO DE Tabacos: "+ listaTabacos.size)
         val imgbtnmezclas = findViewById<ImageButton>(R.id.imgbtnmezclas)
         listaMezclas = db.getMezclas()
         System.out.println("NUMERO DE MEZCLAS: "+ listaMezclas.size)
