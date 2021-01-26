@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbg"
+    android:background="@drawable/fondoapp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.MainActivity"
 
@@ -17,30 +17,52 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="75dp"
-        tools:layout_editor_absoluteY="77dp" />
+        android:layout_marginBottom="100dp"
+        tools:layout_editor_absoluteY="100dp" />
 
-    <ImageButton
-        android:id="@+id/imgbtnmezclas"
-        android:layout_width="137dp"
-        android:layout_height="129dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp"
-        app:srcCompat="@drawable/mezclas" />
-
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp"
-        android:text="Mezclas"
-        android:textColor="@android:color/white"
-        android:textSize="25sp" />
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="450dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/imgMezclas"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/mezclas">
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/nombreTabaco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mezclas"
+                android:layout_marginStart="30dp"
+                android:textColor="@android:color/black"
+                android:textSize="25sp">
+
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

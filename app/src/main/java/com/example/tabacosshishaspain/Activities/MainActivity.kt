@@ -17,12 +17,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tabacosshishaspain.R
 import com.example.tabacosshishaspain.recyclerView.RecyclerAdapter
+import com.example.tabacosshishaspain.recyclerView.TabacosRecyclerAdapter
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var mRecyclerView : RecyclerView
-    val mAdapter : RecyclerAdapter = RecyclerAdapter()
+    val mAdapter : TabacosRecyclerAdapter = TabacosRecyclerAdapter()
     lateinit var listaTabacos : MutableList<MarcaTabaco>
     lateinit var listaMezclas : MutableList<MezclaTabaco>
 
@@ -30,14 +31,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
         val db = DataDbHelper(this)
         listaTabacos = db.getTabacos()
         System.out.println("NUMERO DE Tabacos: "+ listaTabacos.size)
-        val imgbtnmezclas = findViewById<ImageButton>(R.id.imgbtnmezclas)
+        val imgbtnmezclas = findViewById<ImageButton>(R.id.imgMezclas)
         listaMezclas = db.getMezclas()
         System.out.println("NUMERO DE MEZCLAS: "+ listaMezclas.size)
         imgbtnmezclas.setOnClickListener { view ->
@@ -55,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         mRecyclerView = findViewById(R.id.recyclerViewTabacos) as RecyclerView
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = GridLayoutManager(this,2)
-        mAdapter.RecyclerAdapter(listaTabacos, this)
+        mAdapter.TabacosAdapter(listaTabacos)
         mRecyclerView.adapter = mAdapter
 
     }

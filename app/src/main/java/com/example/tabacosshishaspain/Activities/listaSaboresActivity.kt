@@ -3,8 +3,10 @@ package com.example.tabacosshishaspain.Activities
 import Data.DataDbHelper
 import Models.MarcaTabaco
 import Models.SaboresTabaco
+import Utils.Utils
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tabacosshishaspain.R
 import com.example.tabacosshishaspain.recyclerView.RecyclerAdapter
 import com.example.tabacosshishaspain.recyclerView.SaboresAdapter
+import com.example.tabacosshishaspain.recyclerView.TabacosRecyclerAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
@@ -27,9 +30,11 @@ lateinit var listaSabores : MutableList<SaboresTabaco>
        val  intent: Intent = getIntent();
         val sabor :MarcaTabaco  = intent.getSerializableExtra("EXTRA_SABOR") as MarcaTabaco
 
+        val imgTabaco = findViewById<ImageView>(R.id.imgMini)
+        imgTabaco.setImageResource(Utils.convertImage(sabor.nombre))
         // Capture the layout's TextView and set the string as its text
         val textView = findViewById<TextView>(R.id.txtSabor)
-            textView.text = sabor?.nombre
+            textView.text = "Sabores de "+sabor.nombre
 
         val db = DataDbHelper(this)
         //db.insertTabacos()
