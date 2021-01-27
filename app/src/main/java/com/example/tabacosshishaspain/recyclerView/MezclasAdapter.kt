@@ -45,8 +45,8 @@ class MezclasAdapter : RecyclerView.Adapter<MezclasAdapter.ViewHolder>(){
             marca2.text = mezcla.tabaco2
             sabor1.text = mezcla.sabor1
             sabor2.text = mezcla.sabor2
-            porc1.text = mezcla.porcentaje1.toString()
-            porc2.text = mezcla.porcentaje2.toString()
+            porc1.text = mezcla.porcentaje1.toString()+"%"
+            porc2.text = mezcla.porcentaje2.toString()+"%"
         }
         fun ImageView.loadUrl(url: Int) {
             Picasso.with(context).load(url).into(this)
